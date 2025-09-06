@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketBot - Automated Customer Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c5aa0;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-button {
+            padding: 8px 16px;
+            background: #f8f9fa;
+            color: #2c5aa0;
+            text-decoration: none;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
+            transition: all 0.2s;
+        }
+        
+        .nav-button:hover {
+            background: #2c5aa0;
+            color: white;
+        }
+        
+        .nav-button.active {
+            background: #2c5aa0;
+            color: white;
+        }
+        
+        .content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+        
+        h2 {
+            color: #2c5aa0;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #2c5aa0;
+        }
+        
+        .feature h3 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+        }
+        
+        .cta {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a6f 100%);
+            border-radius: 8px;
+            color: white;
+        }
+        
+        .cta h2 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .privacy-section {
+            margin-bottom: 25px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">TicketBot</div>
+                <div class="nav-links">
+                    <a href="#" class="nav-button active" onclick="showHome()">Home</a>
+                    <a href="#" class="nav-button" onclick="showPrivacy()">Privacy Policy</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Home Page Content -->
+        <div id="home-content" class="content">
+            <h1>Streamline Your Customer Service</h1>
+            <p class="subtitle">Connect Instagram and Messenger to automatically handle customer complaints and create organized tickets for your team.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🤖 Smart Chat Bot</h3>
+                    <p>AI-powered bot engages with customers through Instagram and Messenger, collecting complaint details automatically.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🎫 Automated Ticketing</h3>
+                    <p>Converts customer conversations into well-structured, technically worded tickets that eliminate confusion.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🔄 Smart Routing</h3>
+                    <p>Automatically sorts and assigns tickets to the right teams - development, customer support, admin, or other departments.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>📱 Instant Updates</h3>
+                    <p>Sends ticket confirmation numbers back to customers through the same chat platform they used.</p>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <h2>Perfect for Growing Businesses</h2>
+                <p>Designed for small to medium enterprises and startups where project managers juggle technical teams, administrative work, and customer service. Take customer service off your plate and let your team focus on what they do best.</p>
+            </div>
+        </div>
+
+        <!-- Privacy Policy Content -->
+        <div id="privacy-content" class="content hidden">
+            <h1>Privacy Policy</h1>
+            <p><strong>Last updated:</strong> September 7, 2025</p>
+            
+            <div class="privacy-section">
+                <h2>1. Information We Collect</h2>
+                <p>When you use TicketBot through Instagram or Messenger, we collect:</p>
+                <ul>
+                    <li>Messages and conversations you have with our chatbot</li>
+                    <li>Your username and profile information from Instagram/Messenger</li>
+                    <li>Complaint details and customer service requests you provide</li>
+                    <li>Technical information necessary to route tickets to appropriate teams</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-section">
+                <h2>2. How We Use Your Information</h2>
+                <p>We use collected information to:</p>
+                <ul>
+                    <li>Process your customer service requests and complaints</li>
+                    <li>Create and manage support tickets for business teams</li>
+                    <li>Route tickets to appropriate departments (development, support, etc.)</li>
+                    <li>Send you ticket confirmations and updates</li>
+                    <li>Improve our chatbot and ticketing system</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-section">
+                <h2>3. Information Sharing</h2>
+                <p>We do not sell, trade, or rent your personal information to third parties. Your information is only shared with:</p>
+                <ul>
+                    <li>The business teams handling your ticket (internal use only)</li>
+                    <li>Service providers necessary for system operation (under strict confidentiality)</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-section">
+                <h2>4. Data Retention</h2>
+                <p>We retain your information for as long as necessary to:</p>
+                <ul>
+                    <li>Complete your customer service requests</li>
+                    <li>Comply with legal obligations</li>
+                    <li>Resolve disputes and enforce agreements</li>
+                </ul>
+                <p>Typically, this means 12 months after your last interaction, unless longer retention is required by law.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h2>5. Your Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access your personal information we have on file</li>
+                    <li>Request correction of inaccurate information</li>
+                    <li>Request deletion of your information</li>
+                    <li>Opt out of future communications</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-section">
+                <h2>6. Security</h2>
+                <p>We implement appropriate security measures to protect your information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h2>7. Contact Us</h2>
+                <p>If you have questions about this Privacy Policy or want to exercise your rights, contact us at:</p>
+                <p><strong>Email:</strong> privacy@ticketbot.com</p>
+                <p><strong>Response time:</strong> We will respond to privacy requests within 30 days.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h2>8. Changes to This Policy</h2>
+                <p>We may update this Privacy Policy periodically. We will notify users of material changes through our service or other communication methods.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 TicketBot. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showHome() {
+            document.getElementById('home-content').classList.remove('hidden');
+            document.getElementById('privacy-content').classList.add('hidden');
+            
+            document.querySelectorAll('.nav-button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.title = 'TicketBot - Automated Customer Service';
+        }
+
+        function showPrivacy() {
+            document.getElementById('home-content').classList.add('hidden');
+            document.getElementById('privacy-content').classList.remove('hidden');
+            
+            document.querySelectorAll('.nav-button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.title = 'TicketBot - Privacy Policy';
+        }
+    </script>
+</body>
+</html>
