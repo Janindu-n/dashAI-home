@@ -1,7 +1,7 @@
 # Text Change Request - Ticket #F4Ub5frDp45A0xhWDZrj
 
 ## Original Request
-Change the langing pages IMAGINE THIS IS YOUR BUSINESS'S PAGE :) text to "DashAI"
+Change the langing pages DashAI text to "DashAI"
 
 ## Analysis
 Could not automatically parse the old and new text.
